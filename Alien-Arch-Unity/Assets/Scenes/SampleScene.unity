@@ -238,6 +238,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMessage: hello you have virus in computer
   updatemessage: send credit card details so i can fix
+  message1: yer maw punts cooncil
+  message2: yer da wears cooncil cargos
+  message3: yer uncle sells garden furniture
+  message4: yer sister sucks cock for bus fare then walks home
+  message5: yer brother picks up 14 year olds in his corsa
+  messagechoice: 3
+  messages:
+  - wiz gives me stage 4 lung cancer
+  - Hext makes me want a brain tumour
+  - EG give me high levels of aids
 --- !u!4 &1091139775
 Transform:
   m_ObjectHideFlags: 0
