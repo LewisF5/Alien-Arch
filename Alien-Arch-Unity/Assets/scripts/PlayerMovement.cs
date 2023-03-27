@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
         physicsBody = GetComponent<Rigidbody2D>();
     }
 
+    public Collider2D groundSensor = null;
+    public LayerMask groundlayer = 0;
+
+    public float speed = 1;
     public void MoveLeft()
     {
         //Make a variable to hold our velocity and get the
@@ -35,7 +39,17 @@ public class PlayerMovement : MonoBehaviour
         physicsBody.velocity = newVelocity;
     }
 
-    public float speed = 3;
+    public void Jump()
+    {
+        if (groundSensor.IsTouchingLayers(groundlayer))
+        {
+            Vector2 newVelocity = physicsBody.velocity;
+            newVelocity.y = jumpspeed;
+            physicsBody.velocity = newVelocity;
+        }
+    }
+    public float jumpspeed = 10;
+    
 
     // Start is called before the first frame update
     void Start()
