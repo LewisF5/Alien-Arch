@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Collider2D groundSensor = null;
     public LayerMask groundlayer = 0;
-
+    public float jumpspeed = 10;
     public float speed = 1;
     public void MoveLeft()
     {
@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
             physicsBody.velocity = newVelocity;
         }
     }
-    public float jumpspeed = 10;
+   
     
 
     // Start is called before the first frame update
