@@ -6,22 +6,31 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
 public class HealthDisplay : MonoBehaviour
 {
-    Slider healthSlider;
+    public GameObject[] healthIcons;
 
     PlayerHealth player;
 
     void Start()
     {
-        healthSlider = GetComponent<Slider>();
-
         player = FindObjectOfType<PlayerHealth>();
     }
 
     void Update()
     {
-        float currentHealth = player.getHealth();
-        float maxHealth = player.startingHealth();
+        int currentIconHealth = 0;
+        foreach(GameObject icon in healthIcons)
+        {
+            currentIconHealth = currentIconHealth + 1;
 
-        healthSlider.value = currentHealth / maxHealth;
+            if (player.getHealth() >= currentIconHealth)
+            {
+                icon.SetActive(true);
+            }
+
+            else
+            {
+                icon.SetActive(false);
+            }
+        }
     }
 }
